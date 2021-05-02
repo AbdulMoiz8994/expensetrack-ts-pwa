@@ -1,22 +1,19 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import './App.css';
-
-// import components from Comp Folder
-import {Header} from './Components/Header'
-// 
-import Balance from './Containrs/BalanceCont'
-import IcomeAndExpense from './Containrs/IcoandExpCont'
-import History from './Containrs/HistoryCont'
-import AddTransaction  from './Containrs/AddTranssactionCont';
+import {UseContext} from './Services/ContextApi/UseContext'
+// import comp
+import {AddTransaction,History,Header,Balance,IcomeAndExpense} from './Components/index'
 
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <Balance/>
-      <IcomeAndExpense/>
-      <History/>
-      <AddTransaction/>
+     <Header/>
+     <Balance/>
+     <UseContext>
+     <IcomeAndExpense/>
+     <History/>
+     <AddTransaction/>
+     </UseContext>
     </div>
   );
 }
