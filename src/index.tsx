@@ -3,10 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// Doing Wrapper to our main comp for providing data globally
+import {createStore} from 'redux'
+import {Provider as ReduxProvider} from 'react-redux'
+import Reducer from './Services/Reducer/RootReducer'
+const store=createStore(Reducer);
+console.log("Store" , store);
+
+
 
 ReactDOM.render(
   <React.StrictMode>
+    <ReduxProvider store={store}>
     <App />
+    </ReduxProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
