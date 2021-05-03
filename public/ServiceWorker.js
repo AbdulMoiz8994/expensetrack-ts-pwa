@@ -31,10 +31,10 @@ this.addEventListener('install',(event) =>{
 
 // we are making this whenever we call later it will automatically  fetch from here if here not avalaible then we fetch from uer function
 this.addEventListener('fetch', (event) =>{
-      console.log("Fetch Data if not avaliable", event.request.url);
+    //   console.log("Fetch Data if not avaliable", event.request.url);
      event.respondWith(
          caches.match(event.request).then((response) =>{
-             console.log(response);
+            //  console.log(response);
                return response || fetch(event.request)
          }).catch((err) =>{
               console.log(err);

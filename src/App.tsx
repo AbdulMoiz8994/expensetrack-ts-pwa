@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import React from 'react';
 import './App.css';
 import {UseContext} from './Services/ContextApi/UseContext'
 // import comp
@@ -8,8 +8,8 @@ function App() {
   return (
     <div className="App">
      <Header/>
-     <Balance/>
      <UseContext>
+     <Balance/>
      <IcomeAndExpense/>
      <History/>
      <AddTransaction/>

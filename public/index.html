@@ -43,7 +43,7 @@
       if('serviceWorker' in navigator){
         window.addEventListener('load' ,() =>{
           navigator.serviceWorker.register('ServiceWorker.js').then(() =>{
-          console.log("Service Workder Registered");
+          // console.log("Service Workder Registered");
           })  //then block end
           .catch((err) =>{
                console.error(err);

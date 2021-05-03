@@ -2,25 +2,21 @@ import React,{useContext} from 'react'
 import {CreatContext} from '../Services/ContextApi/CreateContext'
 export const History = () => {
    
-    let {transactions}=useContext(CreatContext)
-    console.log(transactions);
-// let initialValue={
-//     transactions:[
-//         {id:1,desc:"Salary",amount:+1000},
-//         {id:2,desc:"Bouns",amount:+500},
-//         {id:3,desc:"Food",amount: -200},
-//     ]
-// }
-
-
-    // const {transactions} = initialValue
+    let {transactions,delTransaction}=useContext(CreatContext)
+console.log(transactions);    
 
     return (
         <div>
             <ul>
             {transactions.map((transactionObj) =>{
+                console.log(transactionObj);
                return(
-              <li key={transactionObj.id}>{transactionObj.desc} <span> {transactionObj.amount}</span></li>
+                   <div key={transactionObj.id}>
+              <li >{transactionObj.desc} 
+              <span> {transactionObj.amount}
+              </span> 
+              <button  onClick={() => delTransaction(transactionObj.id)}>X</button></li>
+              </div>
                )
             })}
             </ul>
