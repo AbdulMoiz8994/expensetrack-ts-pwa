@@ -15,7 +15,7 @@ console.log(transactions);
               <li >{transactionObj.desc} 
               <span> {transactionObj.amount}
               </span> 
-              <button  onClick={() => delTransaction(transactionObj.id)}>X</button></li>
+              <button  onClick={() => delTransaction(transactionObj.ind)}>X</button></li>
               </div>
                )
             })}

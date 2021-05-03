@@ -14,13 +14,12 @@ const {addTransaction}=useContext(CreatContext)
     //   console.log(description);
     //   console.log(amount);
       const addInputs={
-          id: new Date().getTime(),
+          id: Math.floor(Math.random() * 1000),
           desc,
-          amount: Number(amount)
+          amount: +amount
       }
       console.log(addInputs);
        addTransaction(addInputs) 
-
 
     }
 

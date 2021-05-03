@@ -1,4 +1,5 @@
 import {ADD_TO_TRANSACTION,REMOVE_TO_TRANSACTION} from '../ConstantType'
+import {Actions,} from '../../TS-TYPE/TypeScriptType'
 
 export const Reducer=(state,action) =>{
     console.log(action);
@@ -10,10 +11,10 @@ export const Reducer=(state,action) =>{
                 transactions: state.transactions.filter((transaction) => transaction.id !== action.payload)
             }
         case ADD_TO_TRANSACTION:
-            return{
+            return({
                 ...state,
-                transactions:[ ...state.transactions,action.payload]
-            }           
+                transactions: [action.payload,...state.transactions]
+            })          
             default:
                 return state
     }
